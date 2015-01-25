@@ -22,10 +22,24 @@ class Welcome extends Application {
         $this->data['pagebody'] = 'homepage';    // this is the view we want shown
         // build the list of authors, to pass on to our view
         $source = $this->quotes->all();
-        $authors = array();
+        $authors = [];
         foreach ($source as $record) {
-            $authors[] = array('who' => $record['who'], 'mug' => $record['mug'], 'href' => $record['where']);
+            $authors[] = ['who' => $record['who'], 'mug' => $record['mug'], 'href' => $record['where']];
         }
+        $this->data['authors'] = $authors;
+
+        $this->render();
+    }
+    
+    // Function for remap of lock/em/up
+    // Using get(which) function of Quotes.php to get data of celeb for passing.
+    function shucks() {
+        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        // build the list of authors, to pass on to our view
+        $source = $this->quotes->get(2);
+        //$authors = array();
+        $authors[] = ['who' => $source['who'], 'mug' => $source['mug'], 'href' => $source['where'], 'what' => $source['what']];
+        
         $this->data['authors'] = $authors;
 
         $this->render();

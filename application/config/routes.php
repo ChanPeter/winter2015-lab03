@@ -41,6 +41,23 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
+// For rerouting 'sleep' to controllers/first/zzz function.
+$route['sleep'] = 'first/zzz';
+
+// For rerouting 'sleep' to controllers/first/zzz function.
+$route['lock/(:any)'] = 'welcome/shucks';
+
+// For rerouting 'sleep' to controllers/first/zzz function.
+$route['show/(:num)'] = 'first/gimme/$1';
+
+// For rerouting 'dunno' to controllers/guess.
+$route['dunno'] = 'guess';
+
+// For rerouting 'wise/bingo' to controllers/bingo.
+$route['([a-z]+)/bingo'] = 'bingo';
+
+// For rerouting 'comp4711/widom' to controllers/bingo::wisdom.
+$route['comp+(:num)/(:any)'] = 'bingo/wisdom';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
