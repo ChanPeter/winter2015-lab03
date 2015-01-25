@@ -1,9 +1,9 @@
 <?php
 
 /**
- * The first of the celeb quotes nav to by menu link 'first' on the top of pages.
+ * The dunno link.
  * 
- * controllers/First.php
+ * controllers/Guess.php
  *
  * ------------------------------------------------------------------------
  */
