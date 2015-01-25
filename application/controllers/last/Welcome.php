@@ -18,7 +18,9 @@ class Welcome extends Application {
         $this->data['pagebody'] = 'justone';    // this is the view we want shown
         // build the list of authors, to pass on to our view
         $source = $this->quotes->last();
-        //$authors = array();
+        
+        // authors array using new array syntax.
+        // to pass the data to the justone.php page.
         $authors[] = ['who' => $source['who'], 'mug' => $source['mug'], 'href' => $source['where'], 'what' => $source['what']];
         
         $this->data['authors'] = $authors;
